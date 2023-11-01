@@ -13,6 +13,7 @@ menu.onclick = () => {
     header.classList.toggle('titleft');
 }
 
+
 const ctx = document.getElementById('Chart');
 
   new Chart(ctx, {
