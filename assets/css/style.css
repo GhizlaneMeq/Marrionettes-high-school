@@ -1,3 +1,6 @@
+*{
+    color: #00023A;
+}
 /* navbar */
 nav {
     background-color: #2A2B6A;
@@ -25,7 +28,7 @@ input {
 .container{
     line-height: 40px;
 }
-.col-md-6:first-of-type{
+.description-home{
     margin-top: 160px;
 }
 
@@ -49,4 +52,12 @@ input {
 }
 img.laureat{
     height: 500px;
+}
+
+/* clubs */
+img.club{
+    width: 20%;
+}
+.card{
+    border-radius: 20px;
 }
