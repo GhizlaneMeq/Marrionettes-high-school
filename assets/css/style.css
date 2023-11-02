@@ -1,0 +1,12 @@
+/* navbar */
+nav {
+    background-color: #2A2B6A;
+}
+
+.navbar-nav.ml-auto.mr-auto li a {
+    color: white;
+}
+
+input {
+    border: none;
+}
