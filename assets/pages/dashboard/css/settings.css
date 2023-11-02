@@ -373,3 +373,19 @@ ul li a span i {
     background-color: transparent;
     border: none;
 }
+
+.error input{
+    border: 3px solid red;
+}
+
+.success input{
+    border: 3px solid green;
+}
+
+.error textarea{
+    border: 3px solid red;
+}
+
+.success textarea{
+    border: 3px solid green;
+}
