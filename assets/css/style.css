@@ -28,3 +28,25 @@ input {
 .col-md-6:first-of-type{
     margin-top: 160px;
 }
+
+/* second section */
+
+.btn.profile{
+    border-radius: 50%;
+    margin-right: 50px;
+}
+.btn.name{
+    border-radius: 20px; background: #D5E6FF;
+    border: none;
+}
+.btn.name:hover{
+    background-color:white ;
+    color: blue;
+}
+.card{
+    border: none;
+    border-radius: 20px;
+}
+img.laureat{
+    height: 500px;
+}
