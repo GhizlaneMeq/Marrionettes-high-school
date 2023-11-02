@@ -10,3 +10,21 @@ nav {
 input {
     border: none;
 }
+
+/* first section  */
+
+.btn{
+    border: 1px solid #5C45FD;
+    color: #5C45FD;
+}
+.btn:hover{
+    background-color: #5C45FD;
+    color: #ffffff;
+
+}
+.container{
+    line-height: 40px;
+}
+.col-md-6:first-of-type{
+    margin-top: 160px;
+}
