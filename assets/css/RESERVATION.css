@@ -6,7 +6,109 @@
   }
 
   body{
-    /* background-image: url(/img/marionette-bg\ 1.png);
-     */
-background-color: red;
+    background-image: url(/assets/img/marionette-bg\ 1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
   }
+  .reservation h2{
+    text-align: center;
+  }
+  .book_reservation{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(500px,1fr));
+    width: 100%;
+    gap: 15%;
+    
+   }
+  .book{
+    background-color: #8A79FF;
+    display: flex;
+    padding: 2%;
+    gap: 5%;
+    width: auto;
+    height: auto;
+    
+  }
+  .book_img img{
+    width: fit-content;
+    height: auto;
+
+  }
+  
+  form{
+    display: grid;
+    text-align: center;
+    background-color: #8A79FF;
+    width: 80%;
+    height: 80%;
+  }
+  #name {
+    background-color: #D9D9D9;
+    width: 75%;
+    border-radius: 8px;
+
+  }
+  .form_to{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding-right: 10px;
+  }
+  .from, .to{
+    background-color: transparent;
+    padding: 5px;
+  }
+  input{
+    border-radius: 8px;
+    background-color: #D9D9D9;
+    
+  }
+  form .btn {
+    background-color: rosybrown;
+    border-radius: 10px;
+    width: fit-content;
+    height: fit-content;
+    
+  }
+  
+  .description {
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 12px;
+    margin: 2%;
+  }
+  .paragraph {
+    padding: 2%;
+  }
+  .feed-back{
+    display: flex;
+  }
+  .container h2{
+    text-align: center;
+  }
+  .container img{
+    text-align: center;
+  }
+  .all_comments{
+    display: grid;
+    
+  }
+  .comment{
+    background-color: #EEEDED;
+    padding: 3%;
+    margin-top: 2%;
+    border-radius: 15px;
+    width: fit-content;
+  }
+  .like_replay{
+    display: flex;
+   justify-content: space-between;
+   margin-top: 2%;
+  }
+  
+
+
+

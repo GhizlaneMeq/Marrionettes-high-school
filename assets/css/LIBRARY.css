@@ -6,9 +6,24 @@
   }
 
   body{
-    background-image: url(/img/marionette-bg\ 1.png);
+    background-image: url(/assets/img/marionette-bg\ 1.png);
     background-repeat: no-repeat;
     background-size: cover;
   
 
+  }
+  .card-img-top{
+
+    border: solid black;
+    width: 70%;
+    height: 70%;
+  }
+  .card-body{
+    text-align: left;
+  }
+  .dropdown{
+    background-color: none;
+  }
+  #dropdownMenuButton1{
+    background-color: rgb(100, 186, 248);
   }

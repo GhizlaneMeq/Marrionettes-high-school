@@ -29,14 +29,14 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
       rel="stylesheet"
     />
-    <script defer src="/js/LIBRARY.js"></script>
+    <script defer src="/assets/js/LIBRARY.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="/css/LIBRARY.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/LIBRARY.css" />
 
     <title>Document</title>
   </head>
@@ -112,17 +112,17 @@
       <h2 class="text-center">LIBRARY</h2>
       <div class="left_side col-5 p-0">
         <div class="card p-1 w-100 h-100">
-          <div class="row g-0">
+          <div class="row">
             <div class="col-6">
               <img
-                src="/img/harry01.png"
+                src="/assets/img/harry01.png"
                 style="width: 100%"
                 class="img-fluid"
                 alt="..."
               />
             </div>
             <div class="col-6">
-              <div class="card-body">
+              <div class="card-body01">
                 <h3 class="card-title">
                   Harry Potter and the Order of the Phoenix
                 </h3>
@@ -143,25 +143,29 @@
         </div>
       </div>
 
-      <div class="right_side col-5 p-1 bg-primary">
-        <img src="/img/harry02.png" class="img-fluid w-100" alt="..." />
+      <div class="right_side col-5 p-1 bg-transparent">
+        <img src="/assets/img/harry02.png" class="img-fluid w-100" alt="..." />
         <div class="down d-flex p-1">
-          <img src="/img/J.K.png" class="img-fluid col-3 w-50 p-1" alt="..." />
+          <img
+            src="/assets/img/J.K.png"
+            class="img-fluid col-3 w-50 p-1"
+            alt="..."
+          />
           <div
-            class="prizes col-3 w-50 bg-secondary"
+            class="prizes col-3 w-50 text-center"
             style="padding-left: 10%; border-radius: 6%"
           >
             <h4>AWARDS</h4>
-            <div class="awards_pic">
-              <img src="/img/priz01.png" class="img-fluid" alt="..." />
-              <img src="/img/prize02.png" class="img-fluid" alt="..." />
-              <img src="/img/prize03.png" class="img-fluid" alt="..." />
+            <div class="awards_pic align-content-center">
+              <img src="/assets/img/priz01.png" class="img-fluid" alt="..." />
+              <img src="/assets/img/prize02.png" class="img-fluid" alt="..." />
+              <img src="/assets/img/prize03.png" class="img-fluid" alt="..." />
             </div>
           </div>
         </div>
       </div>
     </section>
-    
+
     <div class="categories d-flex justify-content-center gap-1">
       <h2>Categories</h2>
       <div class="dropdown">
@@ -174,20 +178,19 @@
         ></button>
 
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><a class="dropdown-item" href="#">Maths</a></li>
+          <li><a class="dropdown-item" href="#">Physics</a></li>
+          <li><a class="dropdown-item" href="#">Geology</a></li>
+          <li><a class="dropdown-item" href="#">Divers</a></li>
         </ul>
       </div>
     </div>
 
     <section class="container text-center p-1 bg-light">
-    
-
-      <div class="row" style="border-color: black">
-        <div class="card01 col-sm-12 col-md-6 col-lg-3" style="">
+      <div class="row" style="">
+        <div class="card02 col-sm-12 col-md-6 col-lg-3" style="">
           <img
-            src="/img/harry-potter01.jpg"
+            src="/assets/img/harry-potter01.jpg"
             class="card-img-top"
             alt="book_image"
           />
@@ -198,7 +201,7 @@
         </div>
         <div class="card02 col-sm-12 col-md-6 col-lg-3" style="">
           <img
-            src="/img/the invisibel man.jpg"
+            src="/assets/img/the invisibel man.jpg"
             class="card-img-top"
             alt="book_image"
           />
@@ -207,9 +210,9 @@
             <p class="card-text">**</p>
           </div>
         </div>
-        <div class="card03 col-sm-12 col-md-6 col-lg-3" style="">
+        <div class="card02 col-sm-12 col-md-6 col-lg-3" style="">
           <img
-            src="/img/birth of a theorem.jpg"
+            src="/assets/img/birth of a theorem.jpg"
             class="card-img-top"
             alt="book_image"
           />
@@ -218,30 +221,42 @@
             <p class="card-text">***</p>
           </div>
         </div>
-        <div class="card04 col-sm-1 col-md-3 col-lg-3" style="">
-          <img src="/img/navigator.jpg" class="card-img-top" alt="book_image" />
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
+          <img
+            src="/assets/img/navigator.jpg"
+            class="card-img-top"
+            alt="book_image"
+          />
           <div class="card-body">
             <h5 class="card-title">The Natural Navigator</h5>
             <p class="card-text">**</p>
           </div>
         </div>
-        <div class="card05 col-sm-1 col-md-3 col-lg-3" style="">
-          <img src="/img/quantum.jpg" class="card-img-top" alt="book_image" />
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
+          <img
+            src="/assets/img/quantum.jpg"
+            class="card-img-top"
+            alt="book_image"
+          />
           <div class="card-body">
             <h5 class="card-title">Quantum Physics</h5>
             <p class="card-text">***</p>
           </div>
         </div>
-        <div class="card06 col-sm-1 col-md-3 col-lg-3" style="">
-          <img src="/img/geology.jpg" class="card-img-top" alt="book_image" />
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
+          <img
+            src="/assets/img/geology.jpg"
+            class="card-img-top"
+            alt="book_image"
+          />
           <div class="card-body">
             <h5 class="card-title">GEOLOGY</h5>
             <p class="card-text">**</p>
           </div>
         </div>
-        <div class="card07 col-sm-1 col-md-3 col-lg-3" style="">
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
           <img
-            src="/img/mathematics.jpg"
+            src="/assets/img/mathematics.jpg"
             class="card-img-top"
             alt="book_image"
           />
@@ -250,9 +265,9 @@
             <p class="card-text">***</p>
           </div>
         </div>
-        <div class="card08 col-sm-1 col-md-3 col-lg-3" style="">
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
           <img
-            src="/img/vocabulary.jpg"
+            src="/assets/img/vocabulary.jpg"
             class="card-img-top"
             alt="book_image"
           />
@@ -261,24 +276,32 @@
             <p class="card-text">***</p>
           </div>
         </div>
-        <div class="card09 col-sm-1 col-md-3 col-lg-3" style="">
-          <img src="/img/moby-dick.jpg" class="card-img-top" alt="book_image" />
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
+          <img
+            src="/assets/img/moby-dick.jpg"
+            class="card-img-top"
+            alt="book_image"
+          />
           <div class="card-body">
             .
             <h5 class="card-title">MOBY-DICK</h5>
             <p class="card-text">***</p>
           </div>
         </div>
-        <div class="card10 col-sm-1 col-md-3 col-lg-3" style="">
-          <img src="/img/prisoners.jpg" class="card-img-top" alt="book_image" />
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
+          <img
+            src="/assets/img/prisoners.jpg"
+            class="card-img-top"
+            alt="book_image"
+          />
           <div class="card-body">
             <h5 class="card-title">Prisoners of Geography</h5>
             <p class="card-text">**</p>
           </div>
         </div>
-        <div class="card11 col-sm-1 col-md-3 col-lg-3" style="">
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
           <img
-            src="/img/rebel talent.jpg"
+            src="/assets/img/rebel talent.jpg"
             class="card-img-top"
             alt="book_image"
           />
@@ -287,9 +310,9 @@
             <p class="card-text">***</p>
           </div>
         </div>
-        <div class="card12 col-sm-1 col-md-3 col-lg-3" style="">
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
           <img
-            src="/img/how to not die alone.jpg"
+            src="/assets/img/how to not die alone.jpg"
             class="card-img-top"
             alt="book_image"
           />
@@ -298,6 +321,108 @@
             <p class="card-text">*</p>
           </div>
         </div>
+
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
+          <img
+            src="/assets/img/Cosmos.jpg"
+            class="card-img-top"
+            alt="book_image"
+          />
+          <div class="card-body">
+            <h5 class="card-title">COSMOS</h5>
+            <p class="card-text">***</p>
+          </div>
+        </div>
+
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
+          <img
+            src="/assets/img/lab girl.jpg"
+            class="card-img-top"
+            alt="book_image"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Lab Girl</h5>
+            <p class="card-text">*</p>
+          </div>
+        </div>
+
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
+          <img
+            src="/assets/img/chimistry.jpg"
+            class="card-img-top"
+            alt="book_image"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Chimistry</h5>
+            <p class="card-text">***</p>
+          </div>
+        </div>
+
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
+          <img
+            src="/assets/img/forgotten peoples.jpg"
+            class="card-img-top"
+            alt="book_image"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Forgotten Peoples</h5>
+            <p class="card-text">**</p>
+          </div>
+        </div>
+
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
+          <img
+            src="/assets/img/basic physics.jpg"
+            class="card-img-top"
+            alt="book_image"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Basic Physics</h5>
+            <p class="card-text">****</p>
+          </div>
+        </div>
+
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
+          <img
+            src="/assets/img/algebra.jpg"
+            class="card-img-top"
+            alt="book_image"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Algebra</h5>
+            <p class="card-text">***</p>
+          </div>
+        </div>
+
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
+          <img
+            src="/assets/img/for the love of physics.jpg"
+            class="card-img-top"
+            alt="book_image"
+          />
+          <div class="card-body">
+            <h5 class="card-title">For the Love of Physics</h5>
+            <p class="card-text">**</p>
+          </div>
+        </div>
+
+        <div class="card02 col-sm-1 col-md-3 col-lg-3" style="">
+          <img
+            src="/assets/img/a mind for numbers.jpg"
+            class="card-img-top"
+            alt="book_image"
+          />
+          <div class="card-body">
+            <h5 class="card-title">A Mind for Numbers</h5>
+            <p class="card-text">***</p>
+          </div>
+        </div>
+
+
+
+
+
+
       </div>
     </section>
 
