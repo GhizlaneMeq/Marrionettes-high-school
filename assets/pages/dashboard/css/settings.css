@@ -18,6 +18,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     background-image: url(../images/Purple\ Gradient\ Gadgets\ Store\ Presentation\ \(2\).jpg);
+
 }
 
 body::-webkit-scrollbar{
@@ -282,7 +283,7 @@ ul li a span i {
 }
 
 .tit h1 {
-    margin-left: 150%;
+    margin-left: 190%;
     font-weight: bold;
 }
 
@@ -367,4 +368,25 @@ ul li a span i {
 }
 .content .tab {
     margin-top: 50px;
+}
+
+.content{
+    background-color: transparent;
+    border: none;
+}
+
+.error input{
+    border: 3px solid red;
+}
+
+.success input{
+    border: 3px solid green;
+}
+
+.error textarea{
+    border: 3px solid red;
+}
+
+.success textarea{
+    border: 3px solid green;
 }
