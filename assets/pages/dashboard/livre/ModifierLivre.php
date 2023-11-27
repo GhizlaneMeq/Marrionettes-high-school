@@ -1,12 +1,8 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "marionettes";
-$connect = new mysqli($servername, $username, $password, $dbname);
+include '../connect.php';
+$id = isset($_GET['id']) ? $_GET['id'] : $_POST['id'];
 
-$id = $_GET['id'];
 
 $query = "SELECT * FROM `livres` WHERE id = $id";
 $result = mysqli_query($connect, $query);
@@ -27,7 +23,7 @@ if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $auteur = $_POST['auteur'];
     $description = $_POST['description'];
-    $resume = $_POST['resumer'];
+    $resume = $_POST['resume'];
     $nbrPage = $_POST['nbrPage'];
     $category_id = $_POST['category_id'];
 
@@ -39,36 +35,13 @@ if (isset($_POST['submit'])) {
     $result = mysqli_query($connect, $query);
 
     if (isset($result)) {
-        header("location:AfficherLivre.php?msg=user updated successfully");
+        move_uploaded_file($temp_name, $folder);
+        header("location:AfficherLivre.php?msg=livre updated successfully");
     } else {
         echo ("error");
     }
 }
 
-
-/* if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $auteur = $_POST['auteur'];
-    $description = $_POST['description'];
-    $resume = $_POST['resumer'];
-    $nbrPage = $_POST['nbrPage'];
-    $category_id = $_POST['category_id'];
-
-    $image = $_FILES['image']['name'];
-    $temp_name = $_FILES['image']['tmp_name'];
-    $folder = "img/".$image;
-    $query = "";
-      $result = mysqli_query($connect , $query);
-
-    if (isset($result)) {
-        move_uploaded_file($temp_name, $folder);
-        header("location:AfficherLivre.php?msg=book added successfully");
-
-        
-    } else {
-        echo ("error");
-    }
-} */
 
 
 ?>
@@ -85,7 +58,7 @@ if (isset($_POST['submit'])) {
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
         .form-container {
@@ -198,7 +171,9 @@ if (isset($_POST['submit'])) {
 
         <div class="form-container">
             <h2 class="text-center text-white">Book Information</h2>
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id"value="<?php echo $id ?>">
+
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" name="name" required value="<?php echo $row['name'] ?>" >

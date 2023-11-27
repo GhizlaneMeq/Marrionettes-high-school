@@ -1,14 +1,8 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "marionettes";
-
-$connect = new mysqli($servername, $username, $password, $dbname);
+include '../connect.php';
 
 if (isset($_POST['submit'])) {
-
   $name = $_POST['name'];
   $query = "INSERT INTO `categories`(`nom`) 
       VALUES ('$name')";
@@ -20,12 +14,7 @@ if (isset($_POST['submit'])) {
     echo ("error");
   }
 }
-
-
-
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -34,137 +23,176 @@ if (isset($_POST['submit'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create Category</title>
-
+  <title>Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <style>
-    body {
-      background-color: #8e44ad;
-      /* Purple background color */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    form {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
+    .form-container {
+      background-color: #B8C4FE;
+      max-width: 500px;
+      margin-left: 20%;
+      padding: 30px 50px;
+      border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      /* Set your desired width */
     }
 
-    label {
-      display: block;
-      margin-bottom: 8px;
-      color: #8e44ad;
-      /* Purple text color */
+    .form-container label {
+      color: #007bff;
     }
 
-    input {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 15px;
-      box-sizing: border-box;
+    .form-container button {
+      background-color: #007bff;
+      color: #ffffff;
     }
-
-    input[type="submit"] {
-      background-color: #8e44ad;
-      /* Purple button background color */
-      color: white;
-      cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #6c3483;
-      /* Darker purple for hover effect */
-    }
-
-    h2 {
-      color: #fff;
-      /* White text color */
-      text-align: center;
-    }
-
-    /* form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-        }
-
-        input[type="submit"] {
-            background-color: #4caf50;
-            color: white;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        } */
   </style>
-
-
 </head>
 
 <body>
-  <?php
-  if (isset($_GET['msg'])) {
-    $msg = $_GET['msg'];
-    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-        ' . $msg . '
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>';
-  }
-  ?>
-  <h2>Create Category</h2>
-  <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-    <label for="name">Name:</label>
-    <input type="text" name="name" required>
-    <br>
-    <input type="submit" name="submit" value="Create">
-  </form>
+  <div class="aside">
+    <div class="navigation">
+      <ul>
+        <li>
+          <a href="#" class="logo">marionette<p>high school</p></a>
+          <div class="rows">
+            <img src="images/add.png">
+            <h1>Add new task</h1>
+          </div>
+        </li>
+        <li class="active">
+          <a href="" class="active">
+            <span class="title"><i class='bx bxs-home-circle'></i>Dashboard</span>
+          </a>
+        </li>
 
-  <div class="content col-9 mt-5">
-    <table class="table table-hover text-center">
-      <thead class="table-dark">
-        <tr data-aos="fade-left" data-aos-duration="1500">
-          <th scope="col" data-aos="fade-left">id</th>
-          <th scope="col" data-aos="fade-left">Name</th>
-          <th scope="col" data-aos="fade-left">Action</th>
-        </tr>
-      </thead>
-      <tbody data-aos="fade-right" data-aos-duration="1500">
-        <?php
-        $query = "SELECT * FROM `categories`";
-        $result = mysqli_query($connect, $query);
-        while ($rows = mysqli_fetch_assoc($result)) :
-        ?>
-          <tr>
-            <th><?php echo $rows['id'] ?></th>
-            <th><?php echo $rows['nom'] ?></th>
-            <td><a href="modifierCAtegory.php?id=<?= $rows['id'] ?>" class="link-dark">modifier</a> <a href="deleteCategory.php?id=<?= $rows['id'] ?>" class="link-danger" onclick="return confirm('Are you sure you want to delete this book?');">delete</a></td>
-          </tr>
-        <?php
-        endwhile;
-        ?>
-      </tbody>
-    </table>
+        <li>
+          <a href="students.php">
+            <span class="title"><i class='bx bxs-user'></i>Students</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="teachers.php">
+            <span class="title"><i class='bx bxs-user'></i>Teachers</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="booking.php">
+            <span class="title"><i class='bx bxs-bookmark-alt'></i>Booking</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="vistors.php">
+            <span class="title"><i class='bx bxs-low-vision'></i>Visitors</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="settings.php">
+            <span class="title"><i class='bx bxs-cog'></i>Settings</span>
+          </a>
+        </li>
+        <div>
+          <a href="login.html" class="logout">Logout</a>
+        </div>
+      </ul>
+
+    </div>
   </div>
+  <div class="header">
+    <div class='bx bxs-chevron-left' id="remove"></div>
+    <div class="tit">
+      <h1>Dashboard</h1>
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Search">
+      <div class="icons">
+        <img src="images/bell.png" alt="" srcset="">
+      </div>
+      <div class="admin">
+        <img src="images/me.jpg" alt="" srcset="">
+        <div class="name">
+          <h1>CHABAB Nabil <span>admin</span></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="head d-flex justify-content-between">
+    <h1>Overview</h1>
+    <div class="dropdown date">
+      <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Last Week</button>
+      <ul class="dropdown-menu rounded-4">
+        <li><button class="dropdown-item" type="button">Last Day</button></li>
+        <li><button class="dropdown-item" type="button">Last Month</button></li>
+        <li><button class="dropdown-item" type="button">Last Year</button></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <div class="form-container">
+      <h2 class="text-center text-white">Create Category</h2>
+      <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+
+        <br>
+        <button type="submit" name="submit" class="btn btn-primary btn-block">Create Category</button>
+      </form>
+    </div>
+    <div class="row tab">
+      <div class="col-xl-6 col-md-6 mb-5" data-aos="fade-right" data-aos-duration="1500">
+        <div class="card border-left-primary shadow h-100 custom-card">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>action</th>
+                  </tr>
+                </thead>
+                <tbody data-aos="fade-right" data-aos-duration="1500">
+                  <?php
+                  $query = "SELECT * FROM `categories`";
+                  $result = mysqli_query($connect, $query);
+                  while ($rows = mysqli_fetch_assoc($result)) :
+                  ?>
+                    <tr>
+                      <th><?php echo $rows['id'] ?></th>
+                      <th><?php echo $rows['nom'] ?></th>
+                      <td><a href="modifierCAtegory.php?id=<?= $rows['id'] ?>" class="link-dark">modifier</a> <a href="deleteCategory.php?id=<?= $rows['id'] ?>" class="link-danger" onclick="return confirm('Are you sure you want to delete this book?');">delete</a></td>
+                    </tr>
+                  <?php
+                  endwhile;
+                  ?>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
+
+
+
+<script>
+  AOS.init();
+</script>
 
 </html>

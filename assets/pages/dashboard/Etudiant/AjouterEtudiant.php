@@ -1,11 +1,6 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "marionettes";
-
-$connect = new mysqli($servername, $username, $password, $dbname);
+include '../connect.php';
 
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
@@ -20,7 +15,7 @@ if (isset($_POST['submit'])) {
     $folder = "img/" . $image;
 
     $query = "INSERT INTO `etudiants`(`nom`, `email`, `phone`, `image`, `genre`, `level`, `promotion`) 
-    VALUES ('$name','$email','$phone','$genre','$level','$promotion','$folder')";
+    VALUES ('$name','$email','$phone','$folder','$genre','$level','$promotion')";
 
     $result = mysqli_query($connect, $query);
 
@@ -41,12 +36,12 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>create student</title>
     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="../css/style.css"> 
+    <!-- <link rel="stylesheet" href="../css/style.css"> --> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
         .form-container {
@@ -173,7 +168,6 @@ if (isset($_POST['submit'])) {
                 <select class="form-control" id="genre" name="genre" required>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
-                    <option value="Other">Other</option>
                 </select>
             </div>
             <div class="form-group">

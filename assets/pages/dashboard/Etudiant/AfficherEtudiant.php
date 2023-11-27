@@ -1,21 +1,14 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "marionettes";
-$connect = new mysqli($servername, $username, $password, $dbname);
-
-
+include '../connect.php';
 $query = "SELECT * FROM `etudiants`";
 $result = mysqli_query($connect, $query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>display students</title>
     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -113,8 +106,7 @@ $result = mysqli_query($connect, $query);
     <div class="content">
         <div class="row tab">
             <div class="col-xl-6 col-md-6 mb-5" data-aos="fade-right" data-aos-duration="1500">
-            <a href="AjouterLivre.php" class="btn btn-success mb-3" data-aos="fade-down" data-aos-duration="1500">add book</a>
-            <a href="../category/ajouterCategory.php" class="btn btn-success mb-3" data-aos="fade-down" data-aos-duration="1500">add Category</a>
+                <a href="AjouterEtudiant.php" class="btn btn-success mb-3" data-aos="fade-down" data-aos-duration="1500">add student</a>
 
                 <div class="card border-left-primary shadow h-100 custom-card">
                     <div class="card-body">
@@ -137,7 +129,7 @@ $result = mysqli_query($connect, $query);
                                     while ($rows = mysqli_fetch_assoc($result)) :
                                     ?>
                                         <tr>
-                                            <th><?php echo $rows['name'] ?></th>
+                                            <th><?php echo $rows['nom'] ?></th>
                                             <th><?php echo $rows['email'] ?></th>
                                             <td><?php echo $rows['phone'] ?></td>
                                             <td><?php echo $rows['genre'] ?></td>
@@ -145,8 +137,8 @@ $result = mysqli_query($connect, $query);
                                             <td><?php echo $rows['promotion'] ?></td>
                                             <td><img src="<?php echo $rows['image'] ?>?>" style="max-width:100px;" class=""></td>
                                             <td>
-                                                <a href="ModifierLivre.php?id=<?= $rows['id'] ?>" class="link-dark"><i class='bx bxs-pencil fs-5 me-3'></i></a>
-                                                <a href="SupprimerLivre.php?id=<?= $rows['id'] ?>" class="link-danger" onclick="return confirm('Are you sure you want to delete this book?');"><i class='bx bxs-user-x fs-5'></i></a>
+                                                <a href="ModifierEtudiant.php?id=<?= $rows['id'] ?>" class="link-dark"><i class='bx bxs-pencil fs-5 me-3'></i></a>
+                                                <a href="SupprimerEtudiant.php?id=<?= $rows['id'] ?>" class="link-danger" onclick="return confirm('Are you sure you want to delete this Student?');"><i class='bx bxs-user-x fs-5'></i></a>
                                             </td>
                                         </tr>
                                     <?php
